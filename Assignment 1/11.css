@@ -1,0 +1,22 @@
+
+.is-hidden-initially {
+    background-color:aqua;
+    display: none;
+}
+
+.bar {
+    display: none;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.margin20 {
+    margin-bottom: 20px;
+}
+
+.margin10 {
+    margin-bottom: 10px;
+}

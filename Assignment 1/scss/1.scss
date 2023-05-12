@@ -1,0 +1,82 @@
+/**
+ * CSCI2720/ESTR2106 Assignment 1
+ * Bootstrap Web Page with a Web Form
+ *
+ * I declare that the assignment here submitted is original
+ * except for source material explicitly acknowledged,
+ * and that the same or closely related material has not been
+ * previously submitted for another course.
+ * I also acknowledge that I am aware of University policy and
+ * regulations on honesty in academic work, and of the disciplinary
+ * guidelines and procedures applicable to breaches of such
+ * policy and regulations, as contained in the website.
+ *
+ * University Guideline on Academic Honesty:
+ *   http://www.cuhk.edu.hk/policy/academichonesty
+ * Faculty of Engineering Guidelines to Academic Honesty:
+ *   https://www.erg.cuhk.edu.hk/erg/AcademicHonesty
+ *
+ * Student Name: LI Yinxi <fill in yourself>
+ * Student ID  : 1155160255 <fill in yourself>
+ * Date        : 2022.10.21 <fill in yourself>
+ */
+@import "../bootstrap/scss/bootstrap";
+@import "../bootstrap/scss/mixins";
+
+.is-hidden-initially {
+    background-color: aqua;
+    display: none;
+}
+
+.bar {
+    display: none;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+.margin20 {
+    margin-bottom: 20px;
+}
+
+.margin10 {
+    margin-bottom: 10px;
+}
+
+body {
+    @include color-scheme(dark) {
+        /* redefine theme colors for dark theme */
+        $primary: #668cff;
+        $secondary: #ffffff;
+        $success: #66ff66;
+        $danger: #ff6666;
+        $warning: #ffd966;
+        $info: #66ffff;
+        $light: #e6e6e6;
+        $dark: #b3b3b3;
+        $theme-colors: ("primary": $primary,
+            "secondary": $secondary, "success": $success, "danger": $danger, "warning": $warning, "info": $info,
+            "light": $light,
+            "dark": $dark,
+        );
+
+        @each $color,
+        $value in $theme-colors {
+            --#{$variable-prefix}#{$color}: #{$value};
+        }
+
+        $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+
+        @each $color,
+        $value in $theme-colors-rgb {
+            --#{$variable-prefix}#{$color}-rgb: #{$value};
+        }
+
+        $body-color: #f2f2f2;
+        $body-bg: #4d4d4d;
+        --#{$variable-prefix}body-color: #{$body-color};
+        --#{$variable-prefix}body-bg: #{$body-bg};
+    }
+}
